@@ -1,0 +1,122 @@
+// EXTRACT PAGE
+
+.extract-list {
+  .extract-item {
+    background: #F6F5F4;
+    border-bottom: 1px dashed @gray;
+    position: relative;
+    padding: 1em;
+    height: 100px;
+
+    .left {
+      width: 70%;
+    }
+    .pillas-currency {
+      position: absolute;
+      top: 30%;
+      right: .5em;
+      font-size: 1.5em;
+      width: 30%;
+      text-align: right;
+      .points {
+        font-size: 1.8em;
+      }
+    }
+    .date {
+      color: @green;
+      font-weight: lighter;
+      font-size: 2em;
+    }
+    .shop-name {
+      font-size: 1.6em;
+      padding-top: .2em;
+    }
+  }
+}
+
+.extract-footer {
+  text-align: left;
+  padding: 1em;
+  font-size: 1.4em;
+}
+
+.pillas-currency {
+  color: @green;
+  &.debit {
+    color: @dark-red;
+  }
+}
+
+#wrapper {
+  position: absolute;
+  z-index: 1;
+  top: 52px;
+  bottom: 48px;
+  left: 0;
+  width: 100%;
+  background: #ccc;
+  overflow: hidden;
+}
+#scroller {
+  position: absolute;
+  z-index: 1;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  width: 100%;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
+}
+#scroller ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  background: #F6F5F4
+}
+
+.ui-focus {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border-color: @green !important;
+}
+
+.ui-btn.ui-checkbox-off:after, .ui-btn.ui-checkbox-on:after, .ui-btn.ui-radio-off:after, .ui-btn.ui-radio-on:after {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin: -14px 2px 0 -3px;
+  border: 1px solid #ccc;
+  background: none;
+  opacity: 1;
+}
+
+.ui-radio .ui-btn.ui-radio-on:after {
+  background-image: none;
+  background-color: #FFF;
+  color: @green;
+  width: 28px;
+  height: 28px;
+  border-width: 1px;
+  content: "\e605";
+  font-family: 'pillas-font-icon';
+  text-align: center;
+  line-height: 1.8em;
+  border-color: #ccc;
+}
+
+.ui-btn-icon-left {
+  padding-left: 3em;
+}

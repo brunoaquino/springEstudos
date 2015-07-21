@@ -1,0 +1,133 @@
+@import url(variables.less);
+
+@header-color: #5a9367;
+@bg-color: #f6f5f4;
+@warning-color: #e45b6c;
+@gray: #9b9b9b;
+
+.ui-page {
+  background: @bg-color;
+  overflow-y: hidden !important;
+}
+
+.ui-corner-all {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.ui-shadow-inset {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.ui-input-text {
+  border: 0;
+  input {
+    padding: .7em;
+    color: @gray;
+    text-shadow: none;
+    border: 1px solid #ddd;
+    font-family: "Source Sans Pro";
+    font-weight: 200;
+    font-size: 16px;
+    &:focus {
+      border-color: @green;
+    }
+  }
+}
+
+.ui-content {
+  padding: 1em;
+}
+
+.ui-field-contain {
+  border: none;
+}
+
+.ui-header {
+  border-bottom: 0;
+  .ui-title {
+    text-shadow: none;
+    color: #FFF;
+    font-size: 1.3em;
+    padding: 1em 0;
+    font-family: "Roboto Slab";
+  }
+}
+
+.ui-bar-p {
+  background: @header-color;
+}
+
+.ui-bar-w {
+  background: @warning-color;
+}
+
+.ui-popup {
+  .ui-title {
+    padding: 1.6em 0;
+    font-size: 2em;
+  }
+  .ui-content {
+    background: white;
+    > p:first-child, .message {
+      margin-top: 1em;
+      margin: 1em .7em;
+      font-size: 1.4em;
+      text-align: center;
+    }
+    .token {
+      color: @medium-green;
+      font-size: 28px;
+      text-align: center;
+      text-shadow: none;
+      font-weight: 800;
+    }
+  }
+}
+
+.ui-bar-c, .ui-page-theme-c .ui-bar-inherit, html .ui-bar-c .ui-bar-inherit, html .ui-body-c .ui-bar-inherit, html body .ui-group-theme-c .ui-bar-inherit {
+  background-color: white;
+  border: 0;
+  color: #FFF;
+  text-shadow: 0 1px 0 #111;
+  font-weight: bold;
+}
+
+.ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit {
+  background-color: white;
+  text-shadow: none;
+}
+
+.ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head + body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head + body .ui-btn.ui-btn-a:visited {
+  text-shadow: none;
+}
+
+.ui-overlay-a.in {
+  background-color: #3c3c3c;
+}
+
+.ui-btn-left {
+  left: .2em;
+}
+
+.ui-btn-right {
+  right: .2em;
+}
+
+.ui-link {
+  text-decoration: none;
+}
+
+// FOOTER
+
+.ui-footer {
+  border-bottom: 0;
+  border-radius: 0;
+  .ui-btn {
+    text-shadow: none;
+  }
+}

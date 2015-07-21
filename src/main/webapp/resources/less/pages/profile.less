@@ -1,0 +1,109 @@
+.input-calendar, .input-mail {
+  position: relative;
+  .icon {
+    position: absolute;
+    top: .5em;
+    right: 0.5em;
+    vertical-align: middle;
+    font-size: 2em;
+    color: #6b6b6b;
+  }
+}
+
+.input-mail {
+  .pillas-mail {
+    color: @warning-color;
+    font-size: 3em;
+    top: .2em;
+    right: .3em;
+  }
+  .pillas-facebook {
+    color: @gray;
+    font-size: 2em;
+  }
+  input {
+    padding-right: 3em;
+  }
+}
+
+.blocked-profile {
+  background: @dark-red;
+  color: white;
+  text-shadow: none;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  font-size: 2em;
+  .text {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+  }
+  h1 {
+    font-family: "Roboto Slab";
+    font-size: 2em;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+#popupToken-popup, #popupForgotPw-popup, #popupCreateToken-popup, #popupForgotPwToken-popup {
+  width: 100%;
+  left: 0 !important;
+  max-width: 100% !important;
+  bottom: 0;
+  top: auto !important;
+  .ui-popup {
+    border-radius: 0;
+    border: 0;
+    .popup-header {
+      padding: 2em 0;
+      border-top: 1px solid @gray;
+      border-bottom: 1px solid @gray;
+      a {
+        color: @gray;
+        font-size: 2em;
+        text-decoration: none;
+        position: absolute;
+        top: .8em;
+        right: .5em;
+      }
+      h1 {
+        color: @gray;
+        font-size: 1.2em;
+        font-family: "Roboto Slab";
+        text-shadow: none;
+        text-align: left;
+        padding-left: 1em;
+      }
+    }
+    .notification {
+      position: absolute;
+      top: -38px;
+      background: #D0021B;
+      width: 100%;
+      padding: 10px 0;
+      text-shadow: none;
+      color: #FFF;
+      font-size: 16px;
+    }
+    .wrong-pw {
+      border: 1px solid @dark-red;
+      color: @dark-red;
+    }
+    h3 {
+      color: @green;
+      font-size: 2em;
+      margin: 0;
+    }
+    h4 {
+      color: @green;
+      font-size: 1.5em;
+      font-weight: lighter;
+    }
+    p {
+      font-size: 1.3em;
+    }
+  }
+}

@@ -1,0 +1,123 @@
+.ui-page {
+  background: #f6f5f4;
+  overflow-y: hidden !important;
+}
+.ui-corner-all {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+.ui-shadow-inset {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.ui-input-text {
+  border: 0;
+}
+.ui-input-text input {
+  padding: .7em;
+  color: #9b9b9b;
+  text-shadow: none;
+  border: 1px solid #ddd;
+  font-family: "Source Sans Pro";
+  font-weight: 200;
+  font-size: 16px;
+}
+.ui-input-text input:focus {
+  border-color: #5a9367;
+}
+.ui-content {
+  padding: 1em;
+}
+.ui-field-contain {
+  border: none;
+}
+.ui-header {
+  border-bottom: 0;
+}
+.ui-header .ui-title {
+  text-shadow: none;
+  color: #FFF;
+  font-size: 1.3em;
+  padding: 1em 0;
+  font-family: "Roboto Slab";
+}
+.ui-bar-p {
+  background: #5a9367;
+}
+.ui-bar-w {
+  background: #e45b6c;
+}
+.ui-popup .ui-title {
+  padding: 1.6em 0;
+  font-size: 2em;
+}
+.ui-popup .ui-content {
+  background: white;
+}
+.ui-popup .ui-content > p:first-child,
+.ui-popup .ui-content .message {
+  margin-top: 1em;
+  margin: 1em .7em;
+  font-size: 1.4em;
+  text-align: center;
+}
+.ui-popup .ui-content .token {
+  color: #417505;
+  font-size: 28px;
+  text-align: center;
+  text-shadow: none;
+  font-weight: 800;
+}
+.ui-bar-c,
+.ui-page-theme-c .ui-bar-inherit,
+html .ui-bar-c .ui-bar-inherit,
+html .ui-body-c .ui-bar-inherit,
+html body .ui-group-theme-c .ui-bar-inherit {
+  background-color: white;
+  border: 0;
+  color: #FFF;
+  text-shadow: 0 1px 0 #111;
+  font-weight: bold;
+}
+.ui-bar-a,
+.ui-page-theme-a .ui-bar-inherit,
+html .ui-bar-a .ui-bar-inherit,
+html .ui-body-a .ui-bar-inherit,
+html body .ui-group-theme-a .ui-bar-inherit {
+  background-color: white;
+  text-shadow: none;
+}
+.ui-page-theme-a .ui-btn,
+html .ui-bar-a .ui-btn,
+html .ui-body-a .ui-btn,
+html body .ui-group-theme-a .ui-btn,
+html head + body .ui-btn.ui-btn-a,
+.ui-page-theme-a .ui-btn:visited,
+html .ui-bar-a .ui-btn:visited,
+html .ui-body-a .ui-btn:visited,
+html body .ui-group-theme-a .ui-btn:visited,
+html head + body .ui-btn.ui-btn-a:visited {
+  text-shadow: none;
+}
+.ui-overlay-a.in {
+  background-color: #3c3c3c;
+}
+.ui-btn-left {
+  left: .2em;
+}
+.ui-btn-right {
+  right: .2em;
+}
+.ui-link {
+  text-decoration: none;
+}
+.ui-footer {
+  border-bottom: 0;
+  border-radius: 0;
+}
+.ui-footer .ui-btn {
+  text-shadow: none;
+}
