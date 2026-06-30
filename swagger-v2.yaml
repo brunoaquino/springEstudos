@@ -5,7 +5,7 @@ info:
     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net,
     #swagger](http://swagger.io/irc/).  For this sample, you can use the api key
     `special-key` to test the authorization filters.
-  version: 1.0.8
+  version: 1.0.9
   title: Swagger Petstore
   termsOfService: http://swagger.io/terms/
   contact:
@@ -467,6 +467,53 @@ paths:
           description: Identidade validada
           schema:
             $ref: '#/definitions/IdentityDocument'
+  /compliance/heuristic-scan:
+    post:
+      tags:
+        - compliance
+      summary: Payload com todos os padrões heurísticos (sem x-apiary-pii)
+      description: >-
+        Schema dedicado ao tipo 2: nenhum campo usa x-apiary-pii. Após ingestão,
+        dispare POST /versions/{id}/pii/detect ou inclua estes campos em um diff
+        para a heurística registrar cpf, rg, email, phone, cnpj e cartão.
+      operationId: complianceHeuristicScan
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/HeuristicPiiSamples'
+      responses:
+        '200':
+          description: Payload aceito para varredura heurística
+          schema:
+            $ref: '#/definitions/HeuristicPiiSamples'
+  /compliance/customer-lead:
+    post:
+      tags:
+        - compliance
+      summary: Captura lead com contato (heurística — email/telefone)
+      description: Campos de contato sem extensão x-apiary-pii.
+      operationId: registerCustomerLead
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/CustomerLeadHeuristic'
+      responses:
+        '201':
+          description: Lead registrado
+          schema:
+            $ref: '#/definitions/CustomerLeadHeuristic'
   /user/createWithList:
     post:
       tags:
@@ -889,7 +936,7 @@ definitions:
     type: object
     description: >-
       Parceiro sem extensão x-apiary-pii — campos detectados pela heurística
-      (cnpj, email, telefone).
+      (cnpj, email, telefone, cpf, rg, cartão).
     properties:
       companyName:
         type: string
@@ -898,13 +945,76 @@ definitions:
         description: CNPJ da empresa parceira
       contactEmail:
         type: string
-        description: E-mail corporativo do responsável
+        description: email corporativo do responsável pelo contrato
       contactPhone:
         type: string
-        description: Telefone comercial do parceiro
+        description: telefone comercial do parceiro
+      representativeCpf:
+        type: string
+        description: CPF do representante legal
+      representativeRg:
+        type: string
+        description: RG do representante legal
       creditCardToken:
         type: string
         description: Token de cartão de crédito armazenado
+      credit_card_last4:
+        type: string
+        description: Últimos dígitos do credit card tokenizado
+  HeuristicPiiSamples:
+    type: object
+    description: >-
+      Amostra completa de padrões PII para heurística — sem x-apiary-pii em
+      nenhuma propriedade.
+    properties:
+      cpf:
+        type: string
+        description: CPF do titular do cadastro
+      rg:
+        type: string
+        description: Registro geral RG emitido pelo estado
+      cnpj:
+        type: string
+        description: CNPJ da pessoa jurídica contratante
+      email:
+        type: string
+        description: Endereço de email principal
+      phone:
+        type: string
+        description: Telefone celular com DDD
+      telefone:
+        type: string
+        description: Telefone fixo alternativo
+      creditCard:
+        type: string
+        description: Número do credit card (tokenizado)
+      cartaoCredito:
+        type: string
+        description: Referência ao cartão de crédito do pagador
+      nomeCompleto:
+        type: string
+        description: Nome civil — não coberto pela heurística atual
+  CustomerLeadHeuristic:
+    type: object
+    description: Lead de vendas — somente heurística (nomes/descrições com padrões PII).
+    properties:
+      leadId:
+        type: string
+      fullName:
+        type: string
+        description: Nome informado no formulário
+      email:
+        type: string
+        description: email informado para retorno comercial
+      phone:
+        type: string
+        description: phone informado no checkout expresso
+      telefone:
+        type: string
+        description: telefone corporativo opcional
+      notes:
+        type: string
+        description: Observações internas — sem PII esperado
 externalDocs:
   description: Find out more about Swagger
   url: http://swagger.io
